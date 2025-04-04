@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Game Portal | Play Free Online Games</title>
-    <meta name="description" content="Play the best free online games including Tentrix, Body Drop 3D, Sokoballs and more. Enjoy endless fun with our collection of premium games!">
+    <title>Tentrix Game</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,185 +18,66 @@
         header {
             background: #1e2a44;
             padding: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
         main {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
         }
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .game-card {
-            background: #1e2a44;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .game-card:hover {
-            transform: scale(1.03);
-        }
-        .game-iframe {
-            width: 100%;
-            height: 250px;
+        iframe {
             border: none;
-            border-radius: 10px 10px 0 0;
-        }
-        .game-title {
-            padding: 15px;
-            font-size: 18px;
-            margin: 0;
-        }
-        .ad-container {
-            margin: 25px auto;
-            background: #1e2a44;
-            border-radius: 10px;
-            padding: 15px;
-            min-height: 90px;
-        }
-        .leaderboard-ad {
-            width: 100%;
-            max-width: 728px;
-            height: 90px;
-        }
-        .rectangle-ad {
-            width: 300px;
-            height: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            width: 480px;
+            height: 320px;
         }
         .fullscreen-btn {
-            margin: 15px 0;
-            padding: 10px 25px;
+            margin-top: 20px;
+            padding: 10px 20px;
             background: #00aaff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s;
         }
-        .fullscreen-btn:hover {
-            background: #0088cc;
-        }
-        footer {
-            background: #1e2a44;
-            padding: 20px;
-            margin-top: 30px;
-        }
-        @media (max-width: 768px) {
-            .game-grid {
-                grid-template-columns: 1fr;
-            }
-            .ad-container {
-                width: 100%;
-            }
+        .ad-container {
+            margin: 20px auto;
+            max-width: 728px;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="nav-container">
-            <h1>Premium Game Portal</h1>
-            <div id="header-ad" class="ad-container"></div>
-        </div>
+        <h1>Tentrix Game</h1>
     </header>
     
     <main>
-        <!-- Top Leaderboard Ad -->
-        <div class="ad-container leaderboard-ad" id="top-ad"></div>
-
-        <!-- Featured Game -->
-        <div class="game-card">
-            <iframe class="game-iframe" src="https://play.gamepix.com/tentrix/embed?sid=61319" allow="fullscreen"></iframe>
-            <h3 class="game-title">Tentrix - Block Puzzle Game</h3>
-            <button class="fullscreen-btn" onclick="enterFullscreen(this.previousElementSibling.previousElementSibling)">
-                Play Fullscreen
-            </button>
+        <!-- Top Ad Banner -->
+        <div class="ad-container">
+            <!-- Your GamePix Ad Code Would Go Here -->
+            <!-- Example: <div id="gamepix-ad-slot-1"></div> -->
         </div>
 
-        <!-- Mid-Page Ad -->
-        <div class="ad-container leaderboard-ad" id="mid-page-ad"></div>
+        <iframe src="https://play.gamepix.com/tentrix/embed?sid=61319" 
+                allow="fullscreen"></iframe>
+                
+        <button class="fullscreen-btn" onclick="this.previousElementSibling.requestFullscreen()">
+            Play Fullscreen
+        </button>
 
-        <!-- Game Grid -->
-        <div class="game-grid">
-            <!-- Game 1 -->
-            <div class="game-card">
-                <iframe class="game-iframe" src="https://play.gamepix.com/body-drop-3d/embed?sid=60393" allow="fullscreen"></iframe>
-                <h3 class="game-title">Body Drop 3D</h3>
-                <button class="fullscreen-btn" onclick="enterFullscreen(this.previousElementSibling.previousElementSibling)">
-                    Play Fullscreen
-                </button>
-            </div>
-
-            <!-- Sidebar Ad Slot 1 -->
-            <div class="ad-container rectangle-ad" id="side-ad-1"></div>
-
-            <!-- Game 2 -->
-            <div class="game-card">
-                <iframe class="game-iframe" src="https://play.gamepix.com/sokoballs/embed?sid=60393" allow="fullscreen"></iframe>
-                <h3 class="game-title">Sokoballs Puzzle</h3>
-                <button class="fullscreen-btn" onclick="enterFullscreen(this.previousElementSibling.previousElementSibling)">
-                    Play Fullscreen
-                </button>
-            </div>
-
-            <!-- Game 3 -->
-            <div class="game-card">
-                <iframe class="game-iframe" src="https://play.gamepix.com/three-cups-game/embed?sid=60393" allow="fullscreen"></iframe>
-                <h3 class="game-title">Three Cups Challenge</h3>
-                <button class="fullscreen-btn" onclick="enterFullscreen(this.previousElementSibling.previousElementSibling)">
-                    Play Fullscreen
-                </button>
-            </div>
-
-            <!-- Sidebar Ad Slot 2 -->
-            <div class="ad-container rectangle-ad" id="side-ad-2"></div>
-
-            <!-- Game 4 -->
-            <div class="game-card">
-                <iframe class="game-iframe" src="https://play.gamepix.com/funny-shooter-2/embed?sid=60393" allow="fullscreen"></iframe>
-                <h3 class="game-title">Funny Shooter 2</h3>
-                <button class="fullscreen-btn" onclick="enterFullscreen(this.previousElementSibling.previousElementSibling)">
-                    Play Fullscreen
-                </button>
-            </div>
-
-            <!-- Game 5 -->
-            <div class="game-card">
-                <iframe class="game-iframe" src="https://play.gamepix.com/turbo-dismounting/embed?sid=60393" allow="fullscreen"></iframe>
-                <h3 class="game-title">Turbo Dismounting</h3>
-                <button class="fullscreen-btn" onclick="enterFullscreen(this.previousElementSibling.previousElementSibling)">
-                    Play Fullscreen
-                </button>
-            </div>
+        <!-- Bottom Ad Banner -->
+        <div class="ad-container">
+            <!-- Your GamePix Ad Code Would Go Here -->
+            <!-- Example: <div id="gamepix-ad-slot-2"></div> -->
         </div>
-
-        <!-- Bottom Ad -->
-        <div class="ad-container leaderboard-ad" id="bottom-ad"></div>
     </main>
 
-    <footer>
-        <p>© 2023 Premium Game Portal | All Rights Reserved</p>
-        <div class="ad-container" id="footer-ad"></div>
-    </footer>
-
-    <!-- GamePix SDK with Enhanced Ad Setup -->
+    <!-- GamePix SDK Initialization -->
     <script>
-        // Initialize GamePix SDK with optimized ad settings
+        // Initialize GamePix SDK
         (function() {
             var gp = document.createElement('script');
             gp.type = 'text/javascript';
@@ -208,44 +88,15 @@
             
             window.onGamePixReady = function() {
                 GamePix.init({
-                    sid: "61319",
+                    sid: "61319", // Your GamePix SID
                     onReady: function() {
-                        // Premium ad placements
-                        GamePix.adDisplay("header-ad", {type: "banner", width: 468, height: 60});
-                        GamePix.adDisplay("top-ad", {type: "banner", width: 728, height: 90});
-                        GamePix.adDisplay("mid-page-ad", {type: "banner", width: 728, height: 90});
-                        GamePix.adDisplay("side-ad-1", {type: "banner", width: 300, height: 250});
-                        GamePix.adDisplay("side-ad-2", {type: "banner", width: 300, height: 250});
-                        GamePix.adDisplay("bottom-ad", {type: "banner", width: 728, height: 90});
-                        GamePix.adDisplay("footer-ad", {type: "banner", width: 468, height: 60});
-
-                        // Preload interstitial for between games
-                        GamePix.adPreload({type: "interstitial"});
-                    }
-                });
-            };
-
-            // Enhanced fullscreen with ad trigger
-            function enterFullscreen(iframe) {
-                // Show interstitial before fullscreen
-                GamePix.adDisplay("", {
-                    type: "interstitial",
-                    onClose: function() {
-                        if (iframe.requestFullscreen) {
-                            iframe.requestFullscreen();
-                        } else if (iframe.webkitRequestFullscreen) {
-                            iframe.webkitRequestFullscreen();
-                        }
+                        // Initialize ads after SDK is ready
+                        // GamePix.adDisplay("gamepix-ad-slot-1", {type: "banner"});
+                        // GamePix.adDisplay("gamepix-ad-slot-2", {type: "banner"});
                     }
                 });
             }
         })();
-
-        // Fallback to Google Ads if GamePix doesn't fill
-        function loadGoogleAds() {
-            // Implement your Google AdSense code here
-            console.log("Loading Google Ads as fallback");
-        }
     </script>
 </body>
 </html>
