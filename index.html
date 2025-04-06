@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tentrix Game</title>
     <style>
         body {
@@ -57,27 +57,25 @@
     <main>
         <!-- Top Ad Banner -->
         <div class="ad-container">
-            <!-- Your GamePix Ad Code Would Go Here -->
+            <!-- Ad Slot 1 -->
             <!-- Example: <div id="gamepix-ad-slot-1"></div> -->
         </div>
 
-        <iframe src="https://play.gamepix.com/tentrix/embed?sid=61319" 
-                allow="fullscreen"></iframe>
-                
+        <iframe src="https://play.gamepix.com/tentrix/embed?sid=61319" allow="fullscreen"></iframe>
+        
         <button class="fullscreen-btn" onclick="this.previousElementSibling.requestFullscreen()">
             Play Fullscreen
         </button>
 
         <!-- Bottom Ad Banner -->
         <div class="ad-container">
-            <!-- Your GamePix Ad Code Would Go Here -->
+            <!-- Ad Slot 2 -->
             <!-- Example: <div id="gamepix-ad-slot-2"></div> -->
         </div>
     </main>
 
-    <!-- GamePix SDK Initialization -->
+    <!-- GamePix SDK -->
     <script>
-        // Initialize GamePix SDK
         (function() {
             var gp = document.createElement('script');
             gp.type = 'text/javascript';
@@ -85,18 +83,30 @@
             gp.src = 'https://sdk.gamepix.com/v3/gamepix-sdk.js';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(gp, s);
-            
+
             window.onGamePixReady = function() {
                 GamePix.init({
-                    sid: "61319", // Your GamePix SID
+                    sid: "61319",
                     onReady: function() {
-                        // Initialize ads after SDK is ready
-                        // GamePix.adDisplay("gamepix-ad-slot-1", {type: "banner"});
-                        // GamePix.adDisplay("gamepix-ad-slot-2", {type: "banner"});
+                        // Optional: GamePix.adDisplay("gamepix-ad-slot-1", {type: "banner"});
+                        // Optional: GamePix.adDisplay("gamepix-ad-slot-2", {type: "banner"});
                     }
                 });
             }
         })();
+    </script>
+
+    <!-- Monetag Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw(1).js') // change to /sw.js if renamed
+                .then(function(reg) {
+                    console.log('Service worker registered with scope:', reg.scope);
+                })
+                .catch(function(error) {
+                    console.error('Service worker registration failed:', error);
+                });
+        }
     </script>
 </body>
 </html>
