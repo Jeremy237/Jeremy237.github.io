@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tentrix Game</title>
+
+    <!-- Monetag Script -->
+    <script src="https://kulroakonsu.net/88/tag.min.js" data-zone="140833" async data-cfasync="false"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -99,7 +103,7 @@
     <!-- Monetag Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw(1).js') // change to /sw.js if renamed
+            navigator.serviceWorker.register('/sw.js')
                 .then(function(reg) {
                     console.log('Service worker registered with scope:', reg.scope);
                 })
