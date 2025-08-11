@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Tentrix Game</title>
-
-    <!-- Monetag Script -->
-    <div id="webtraf_15250" style="width:468px;height:60px;"><script src="https://webtrafic.ru/ads.php?uid=15250" async></script></div>
-
+    <title>My Video</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,102 +11,33 @@
             color: white;
             margin: 0;
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            text-align: center;
-        }
-        header {
-            background: #1e2a44;
-            padding: 20px;
-        }
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100vh;
+        }
+        .video-box {
+            background: #1e2a44;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
         iframe {
             border: none;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            width: 480px;
-            height: 320px;
-        }
-        .fullscreen-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #00aaff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .ad-container {
-            margin: 20px auto;
-            max-width: 728px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Tentrix Game</h1>
-    </header>
-    
-    <main>
-        <!-- Top Ad Banner -->
-        <div class="ad-container">
-            <!-- Ad Slot 1 -->
-            <!-- Example: <div id="gamepix-ad-slot-1"></div> -->
-        </div>
-
-        <iframe src="https://play.gamepix.com/tentrix/embed?sid=61319" allow="fullscreen"></iframe>
-        
-        <button class="fullscreen-btn" onclick="this.previousElementSibling.requestFullscreen()">
-            Play Fullscreen
-        </button>
-
-        <!-- Bottom Ad Banner -->
-        <div class="ad-container">
-            <!-- Ad Slot 2 -->
-            <!-- Example: <div id="gamepix-ad-slot-2"></div> -->
-        </div>
-    </main>
-
-    <!-- GamePix SDK -->
-    <script>
-        (function() {
-            var gp = document.createElement('script');
-            gp.type = 'text/javascript';
-            gp.async = true;
-            gp.src = 'https://sdk.gamepix.com/v3/gamepix-sdk.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gp, s);
-
-            window.onGamePixReady = function() {
-                GamePix.init({
-                    sid: "61319",
-                    onReady: function() {
-                        // Optional: GamePix.adDisplay("gamepix-ad-slot-1", {type: "banner"});
-                        // Optional: GamePix.adDisplay("gamepix-ad-slot-2", {type: "banner"});
-                    }
-                });
-            }
-        })();
-    </script>
-
-    <!-- Monetag Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(function(reg) {
-                    console.log('Service worker registered with scope:', reg.scope);
-                })
-                .catch(function(error) {
-                    console.error('Service worker registration failed:', error);
-                });
-        }
-    </script>
+    <div class="video-box">
+        <iframe src="https://mivalyo.com/embed/6tplh67pv8r1" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            scrolling="no" 
+            width="640" 
+            height="360" 
+            allowfullscreen>
+        </iframe>
+    </div>
 </body>
 </html>
